@@ -2,9 +2,12 @@
   tasks works!
 </p> -->
 <h1> Tasks List</h1>
-<mat-selection-list >
-  <mat-list-option *ngFor="let task of taskList">
-    <p>{{task}}</p>
+
+
+
+<mat-selection-list *ngIf="taskList" >
+  <mat-list-option *ngFor="let task of taskList | async">
+    <p>{{task.description}}</p>
   </mat-list-option>
 </mat-selection-list>
 
