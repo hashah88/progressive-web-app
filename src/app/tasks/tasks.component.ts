@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { Task} from "../app.model"
+import {FirebaseService} from "../firebase.service"
+
 
 
 @Component({
@@ -9,7 +12,7 @@ import { FormsModule } from '@angular/forms';
 })
 export class TasksComponent implements OnInit {
 
-  constructor() { }
+  constructor(private firebaseService : FirebaseService) { }
 
   taskList :string[] = [
     "Wash the dishes", 
@@ -21,7 +24,15 @@ export class TasksComponent implements OnInit {
 
   usersInput:string = "Edit this task"
 
+
   ngOnInit() {
   }
+
+  
+  addTask(taskName : string ){
+    console.log(taskName);
+    this.firebaseService.addTheTask(taskName);
+  }
+
 
 }

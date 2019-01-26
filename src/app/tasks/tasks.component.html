@@ -10,8 +10,10 @@
 
 <div class="example-form">
   <mat-form-field class="example-full-width">
-    <input matInput placeholder="Add a Task" [(ngModel)]="usersInput">
+    <!-- <input matInput placeholder="Add a Task" [(ngModel)]="usersInput"> -->
+    <input matInput #txtVal (keydown.enter)="addTask(txtVal.value)" placeholder="Add a Task">
   </mat-form-field>
 </div>
 
 <h1> {{usersInput}}</h1>
+
