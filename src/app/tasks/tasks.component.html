@@ -1,0 +1,17 @@
+<!-- <p>
+  tasks works!
+</p> -->
+<h1> Tasks List</h1>
+<mat-selection-list >
+  <mat-list-option *ngFor="let task of taskList">
+    <p>{{task}}</p>
+  </mat-list-option>
+</mat-selection-list>
+
+<div class="example-form">
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="Add a Task" [(ngModel)]="usersInput">
+  </mat-form-field>
+</div>
+
+<h1> {{usersInput}}</h1>
