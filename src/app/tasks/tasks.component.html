@@ -1,22 +1,18 @@
-<!-- <p>
-  tasks works!
-</p> -->
 <h1> Tasks List</h1>
 
-
-
-<mat-selection-list *ngIf="taskList" >
+<mat-selection-list *ngIf="taskList">
   <mat-list-option *ngFor="let task of taskList | async">
     <p>{{task.description}}</p>
+    <p>{{task.id}}</p>
   </mat-list-option>
 </mat-selection-list>
 
 <div class="example-form">
   <mat-form-field class="example-full-width">
+    <!-- Two way binding  -->
     <!-- <input matInput placeholder="Add a Task" [(ngModel)]="usersInput"> -->
     <input matInput #txtVal (keydown.enter)="addTask(txtVal.value)" placeholder="Add a Task">
   </mat-form-field>
 </div>
 
 <h1> {{usersInput}}</h1>
-
